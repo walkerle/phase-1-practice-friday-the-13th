@@ -11,6 +11,7 @@ const desc = document.querySelector('#description');
 const watched = document.querySelector('#watched');
 const bloodAmount = document.querySelector('#blood-amount');
 const bloodForm = document.querySelector('#blood-form');
+const bloodCount = document.querySelector('#amount');
 
 // Fetch Functions
 function getMovieMenu(url) {
@@ -30,15 +31,15 @@ bloodForm.addEventListener('submit', addBlood);
 
 // Event Handlers
 function btnToggle() {
-    console.log('btnToggle func invoked');
-    // selectedMovie.watched = !selectedMovie.watched
+    // console.log('btnToggle func invoked');
+    watched.textContent = (watched.textContent == 'Unwatched' ? 'Watched' : 'Unwatched');
     // (console.log(watched);)
-    // (watched ? 
 }
 
 function addBlood(e) {
-    e.preventDefault;
-    console.log('addBlood func invoked');
+    e.preventDefault();
+    // console.log('addBlood func invoked');
+    bloodCount.textContent = parseInt(bloodCount.textContent) + parseInt(e.target['blood-amount'].value);
     bloodForm.reset();
 }
 
@@ -69,12 +70,12 @@ function renderMovie(data) {
     title.textContent = data.title;
     year.textContent = data.release_year;
     desc.textContent = data.description;
-    // watched.textContent = data.watched
-    if (data.watched) {
-        watched.textContent = 'Watched'
-    } else {
-        watched.textContent = 'Unwatched'
-    };
+    watched.textContent = (data.watched ? 'Watched' : 'Unwatched');
+    // if (data.watched) {
+    //     watched.textContent = 'Watched'
+    // } else {
+    //     watched.textContent = 'Unwatched'
+    // };
     bloodAmount.textContent = data.blood_amount;
 }
 

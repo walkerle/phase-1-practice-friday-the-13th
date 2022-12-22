@@ -15,10 +15,10 @@ Challenge #3
 [x] Make button settings; 'UnWatched' for false vs 'Watched' for true
 
 Challenge #4
-[] Make button settings toggle 'Watched' and 'Unwatched' when clicked depending on value of watched (from front end? or fetch/backend?) (event listener, PATCH method?)
+[x] Make button settings toggle 'Watched' and 'Unwatched' when clicked depending on value of watched (from front end? or fetch/backend?) (event listener, PATCH method?)
 
 Challenge #5
-[] Enable more drops for button form
+[x] Enable more drops for button form
 
 # Data Shape
 {
